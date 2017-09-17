@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Fat Fingers Converter</title>
+    <meta name="description" content="Fat Fingers">
+
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta22/shoelace.css">
+    
+    <style>
+
+        mark {
+            background-color: #ff7363;
+        }
+
+        code {
+            background-color: #f2f2f2;
+        }
+    
+    </style>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+    <div class="row row-center mar-0">
+        <div class="col-10 col-xl-6">
+            <h1 class="text-center mar-t-md">Fat Fingers Converter</h1>
+            <p class="mar-t-md">This tool is designed to help you convert the paragraph you typed with your fingers resting on the wrong keys to something that resembles what you <em>meant</em> to type.</p>
+            <p><mark>NOTE:</mark> This converter assumes you are an amazing typist who hit every incorrect key in the most correct way possible.</p>
+            <p>Here are some sample sentences you can use:</p>
+            <code>G99d gr8ef ty8s 8s n9t g98jg weoo;</code>
+            <br><br>
+            <code>I nrrf yo hry domr yypinh lrddond.</code>
+            <br><br>
+            <code>Oh my towh 5hiw iw qd5uqlly no5 tooe.</code>
+            <h3 class="mar-t-md">Directions</h3>
+                <ol>
+                    <li>Paste your incorrectly-typed text into the top box.</li>
+                    <li>Click the big green button until you start to see some of the words you meant to type.</li>
+                    <li>Click inside the last box and use your browser's spellchecker and your own editing skills to fix the final problem words/letters.</li>
+                </ol>
+        </div>
+    </div>
+    <div class="row row-center mar-0">
+        <div class="col-8 col-xl-5">
+            <textarea id="textarea" rows="8" class="mar-t-md" onfocus="clearContents(this)">Put the bad text here.</textarea>
+            <button onclick="buttonHandler()" type="button" class="button-success button-block mar-t-md" id="convertThis">Click this button until the text below looks nearly correct.</button>
+            <textarea id="textareanew" rows="8" class="mar-t-md mar-b-xl">New text will come out here.</textarea>
+        </div>
+    </div>
+
+    <div class="row row-center mar-0">
+        <div class="col-10 col-xl-6">
+            <p class="text-center">Thanks for checking out this nearly pointless tool!</p>
+            <p class="text-center">If you think you can make it better, please feel free to stop by on <a href="#">GitHub</a>.</p>
+            <p class="text-center">Riley Skains, 2017</p>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    
+    function clearContents(element) {
+  element.value = '';
+}
+
+
+        var count = 0;
+
+    function buttonHandler() {
+        switch(count) {
+            case 0:
+                convert0();
+                break;
+            case 1:
+                convert1();
+                break;
+            case 2:
+                convert2();
+                break;
+            case 3:
+                convert3();
+                break;
+            case 4:
+                convert4();
+                break;
+            case 5:
+                convert5();
+                return count = 0;
+            
+        }
+        count++;
+    }
+
+    function convert0() {
+    	var badKeys = ['q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f', 'g', '1', '2', '3', '4', '5'];
+    	var newKeys = ['a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b', 'q', 'w', 'e', 'r', 't'];
+    	var string = document.getElementById('textarea').value;
+    	var array = string.split("");
+    	for (i = 0; i < array.length; i++) {
+    		for (o = 0; o < badKeys.length; o++) {
+    			if (array[i] == badKeys[o]) {
+    				array[i] = newKeys[o];
+    				break;
+    			}
+    		}
+    	}
+    	newString = array.join("");
+    	document.getElementById("textareanew").value = newString;
+    }
+
+    function convert1() {
+    	var badKeys = ['s', 'd', 'f', 'g', 'h', 'w', 'e', 'r', 't', 'y', 'x', 'c', 'v', 'b'];
+    	var newKeys = ['a', 's', 'd', 'f', 'g', 'q', 'w', 'e', 'r', 't', 'z', 'x', 'c', 'v'];
+    	var string = document.getElementById('textarea').value;
+    	var array = string.split("");
+    	for (i = 0; i < array.length; i++) {
+    		for (o = 0; o < badKeys.length; o++) {
+    			if (array[i] == badKeys[o]) {
+    				array[i] = newKeys[o];
+    				break;
+    			}
+    		}
+    	}
+    	newString = array.join("");
+    	document.getElementById("textareanew").value = newString;
+    }
+    
+    function convert2() {
+    	var badKeys = ['w', 'e', 'r', 't', 'y', '2', '3', '4', '5', '6', 's', 'd', 'f', 'g', 'h'];
+    	var newKeys = ['a', 's', 'd', 'f', 'g', 'q', 'w', 'e', 'r', 't', 'z', 'x', 'c', 'v', 'b'];
+    	var string = document.getElementById('textarea').value;
+    	var array = string.split("");
+    	for (i = 0; i < array.length; i++) {
+    		for (o = 0; o < badKeys.length; o++) {
+    			if (array[i] == badKeys[o]) {
+    				array[i] = newKeys[o];
+    				break;
+    			}
+    		}
+    	}
+    	newString = array.join("");
+    	document.getElementById("textareanew").value = newString;
+    }
+    
+    function convert3() {
+    	var badKeys = ['g', 'h', 'j', 'k', 'l', 'y', 'u', 'i', 'o', 'b', 'n', 'm', ',', '.'];
+    	var newKeys = ['h', 'j', 'k', 'l', ';', 'u', 'i', 'o', 'p', 'n', 'm', ',', '.', '/'];
+    	var string = document.getElementById('textarea').value;
+    	var array = string.split("");
+    	for (i = 0; i < array.length; i++) {
+    		for (o = 0; o < badKeys.length; o++) {
+    			if (array[i] == badKeys[o]) {
+    				array[i] = newKeys[o];
+    				break;
+    			}
+    		}
+    	}
+    	newString = array.join("");
+    	document.getElementById("textareanew").value = newString;
+    }
+
+    function convert4() {
+    	var badKeys = ['y', 'u', 'i', 'o', 'p', '6', '7', '8', '9', '0', 'h', 'j', 'k', 'l', ';'];
+    	var newKeys = ['h', 'j', 'k', 'l', ';', 'y', 'u', 'i', 'o', 'p', 'b', 'n', 'm', ',', '.'];
+    	var string = document.getElementById('textarea').value;
+    	var array = string.split("");
+    	for (i = 0; i < array.length; i++) {
+    		for (o = 0; o < badKeys.length; o++) {
+    			if (array[i] == badKeys[o]) {
+    				array[i] = newKeys[o];
+    				break;
+    			}
+    		}
+    	}
+    	newString = array.join("");
+    	document.getElementById("textareanew").value = newString;
+    }
+
+    function convert5() {
+    	var badKeys = ['t', 'y', 'u', 'i', 'o', '5', '6', '7', '8', '9', 'h', 'j', 'k'];
+    	var newKeys = ['h', 'j', 'k', 'l', ';', 'y', 'u', 'i', 'o', 'p', 'm', ',', '.'];
+    	var string = document.getElementById('textarea').value;
+    	var array = string.split("");
+    	for (i = 0; i < array.length; i++) {
+    		for (o = 0; o < badKeys.length; o++) {
+    			if (array[i] == badKeys[o]) {
+    				array[i] = newKeys[o];
+    				break;
+    			}
+    		}
+    	}
+    	newString = array.join("");
+    	document.getElementById("textareanew").value = newString;
+    }
+    
+    </script>
+    <script src="https://cdn.shoelace.style/1.0.0-beta22/shoelace.js"></script>    
+</body>
+</html>
